@@ -24,10 +24,15 @@ li {
 
 }
 
+li:hover {
+    background:  rgba(63, 62, 62, 0.95);
+    border: 2px solid pink;
+}
+
 .start-button {
     width: 50%;
     height: 40px;
-    background-color: yellow;
+    background: rgba(204, 186, 186, 0.95);
     border: 5px solid pink;
     margin: 0 auto;
     color: black;

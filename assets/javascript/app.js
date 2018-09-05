@@ -1,18 +1,3 @@
-// Generate first question & answers
-
-// Start timer
-
-// user must then choose answer
-
-// log whether answer is correct or incorrect
-
-// display correct or incorrect page
-
-// if timer reaches 0, "You ran out of time screen is logged."
-
-// generate next question after a 5 second pause.
-
-// next question is pushed to page.
 var time = 25;
 var intervalId;
 var count = 0;
@@ -43,9 +28,6 @@ var stopwatch = function(){
     }
 }
 
-if (count > 6) {
-  
-}
 
 var startGame = function(){
     time = 25;
@@ -82,15 +64,22 @@ $("li").on("click", function() {
     }
 
     if(count > 6) {
-        $("#time-remaining").html("")
+        $("#time-remaining").text("")
         $("#question").text("That's it! You finished the Quiz!")
         $("#answer-one").text("")
         $("#answer-two").text("")
         $("#answer-three").text("")
-        $("#answer-four").html(questions[count].answer.four)
+        $("#answer-four").text("")
         $("#answers-correct").html("Answers Correct: " + answersCorrect)
         $("#answers-incorrect").html("Answers Incorrect: " + answersIncorrect)
-        $("#start-button").removeClass("start-button").text("")
+        $("#start-button").addClass("start-button").text("Start Over?")
+        $("#start-button").on("click", function() {
+            count = 0;
+            answersIncorrect = 0;
+            answersCorrect = 0;
+            clearInterval(intervalId);
+            startGame();
+        })
     }
 })
 
@@ -173,22 +162,7 @@ var questions = [
             four: "Marcelo 'coldzera' David"
         }
     }
-
-
     
 ]
-
-
-// var timeRemaining = setInterval(function() {   
-//     console.log(time)
-//     time--
-//     if (time === 0) {
-//         clearInterval(timeRemaining);
-//     }
-
-// }, 1000)
-
-
-// function that handles the countdown timer for each question
 
 });
