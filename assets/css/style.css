@@ -21,12 +21,13 @@ li {
     font-size: 25px;
     line-height: 40px;
     color: bisque;
-
+    padding-right: 100px;
 }
 
 li:hover {
     background:  rgba(63, 62, 62, 0.95);
     border: 2px solid pink;
+    cursor: pointer;
 }
 
 .start-button {
